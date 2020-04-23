@@ -39,9 +39,9 @@ class App extends Component {
       <Provider store={store} style={{flex: 1}}>
         <NavigationContainer>
           <Stack.Navigator>
-            <Stack.Screen name="Home" component={this.HomeTabs} />
             <Stack.Screen name="Login" component={LoginForm} />
             <Stack.Screen name="Register" component={RegistrationForm} />
+            <Stack.Screen name="Home" component={this.HomeTabs} />
           </Stack.Navigator>
         </NavigationContainer>
       </Provider>
