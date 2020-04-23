@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Text, View, Image} from 'react-native';
 import {connect} from 'react-redux';
 import {Card, CardSection, Input, Button, Spinner, Header} from '../common';
-import {Actions} from 'react-native-router-flux';
 import {emailChanged, passwordChanged, loginUser} from '../../actions';
 
 class LoginForm extends Component {
@@ -24,6 +23,11 @@ class LoginForm extends Component {
     console.log('register');
     this.props.navigation.navigate('Register');
   }
+
+  goToHome = () => {
+    console.log('go to home');
+    this.props.navigation.navigate('Home');
+  };
 
   renderButton() {
     if (this.props.loading) {
@@ -62,6 +66,7 @@ class LoginForm extends Component {
             onPress={this.goToRegister.bind(this)}>
             Register
           </Text>
+          <Text onPress={this.goToHome.bind(this)}>Home</Text>
         </Card>
       </View>
     );
